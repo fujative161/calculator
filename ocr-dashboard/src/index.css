@@ -1,0 +1,65 @@
+/* Reset & theme */
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+  background: #f6f7fb;
+  color: #111827;
+}
+
+/* Layout */
+.app-root { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
+.sidebar {
+  background: #0b1020;
+  color: #e5e7eb;
+  padding: 20px 12px;
+}
+.sidebar-brand { font-weight: 700; font-size: 18px; margin: 6px 8px 16px; }
+.sidebar-nav { display: flex; flex-direction: column; gap: 8px; }
+.nav-section { margin: 12px 8px 4px; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: #9ca3af; }
+.nav-item { color: #e5e7eb; text-decoration: none; padding: 10px 12px; border-radius: 8px; display: block; font-size: 14px; }
+.nav-item:hover { background: #151b33; }
+.nav-item.active { background: #243260; color: #fff; }
+
+.content { padding: 28px 32px; }
+.page-header { font-size: 28px; font-weight: 800; margin-bottom: 20px; }
+
+/* Card */
+.card { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 20px; margin-bottom: 18px; }
+
+/* Fields */
+.field-grid.single { display: grid; grid-template-columns: 160px 320px; align-items: center; gap: 16px; }
+.label { font-size: 14px; color: #6b7280; }
+.select, .input { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid #e5e7eb; background: #fff; font-size: 14px; }
+.select:focus, .input:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,.15); }
+.input:disabled { background: #f3f4f6; color: #9ca3af; }
+
+/* Table-like layout */
+.table { width: 100%; display: grid; gap: 0; }
+.table-header, .table-row { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 16px; align-items: center; padding: 12px 8px; }
+.table-header { color: #6b7280; font-size: 13px; }
+.table-row + .table-row { border-top: 1px solid #f0f0f0; }
+.td-title { font-weight: 600; }
+
+/* Switch */
+.switch { display: inline-flex; align-items: center; gap: 10px; cursor: pointer; user-select: none; }
+.switch input { display: none; }
+.slider { position: relative; display: inline-block; width: 44px; height: 24px; background: #e5e7eb; border-radius: 999px; transition: background .2s ease; }
+.slider::after { content: ''; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: white; box-shadow: 0 1px 2px rgba(0,0,0,.2); transition: transform .2s ease; }
+.switch input:checked + .slider { background: #3b82f6; }
+.switch input:checked + .slider::after { transform: translateX(20px); }
+.switch-label { color: #111827; font-size: 14px; }
+
+/* Buttons */
+.actions { display: flex; gap: 12px; justify-content: flex-end; margin-top: 12px; }
+.btn { border: 1px solid #d1d5db; background: #fff; color: #111827; padding: 10px 16px; border-radius: 10px; font-weight: 600; cursor: pointer; }
+.btn:hover { background: #f9fafb; }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.btn.primary { background: #2563eb; color: #fff; border-color: #2563eb; }
+.btn.primary:hover { background: #1d4ed8; }
+.btn.ghost { background: #fff; }
+
+/* Errors */
+.errors { margin: 12px 0 0; padding-left: 18px; color: #b91c1c; }
+.errors li { margin: 4px 0; }
